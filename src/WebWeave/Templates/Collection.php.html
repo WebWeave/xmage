@@ -1,0 +1,13 @@
+<?php
+
+namespace @VENDOR\@PACKAGE\Model\ResourceModel\@MODEL_NAME;
+
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+
+class Collection extends AbstractCollection
+{
+	protected function _construct()
+	{
+		$this->_init('@VENDOR\@PACKAGE\Model\@MODEL_NAME', '@VENDOR\@PACKAGE\Model\ResourceModel\@MODEL_NAME');
+    }
+}

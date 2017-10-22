@@ -1,0 +1,24 @@
+{
+    "name": "webweave/xmage",
+    "description": "Tool for quick Magento 2 file generation",
+    "keywords": ["cli app", "Magento2", "module", "Module development"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sander de Jonge",
+            "email": "s.de.jonge@x-interactive.nl"
+        }
+    ],
+    "require": {
+        "symfony/console": "^3.3",
+        "symfony/filesystem": "^3.3",
+        "symfony/finder": "^3.3"
+    },
+    "autoload": {
+       "psr-4": {"": "src"}
+    },
+    "bin": [
+        "bin/xmage"
+    ]
+}

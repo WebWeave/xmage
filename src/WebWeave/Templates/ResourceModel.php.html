@@ -1,0 +1,16 @@
+<?php
+
+namespace @VENDOR\@PACKAGE\Model\ResourceModel;
+
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+
+class @MODEL_NAME extends AbstractDb
+{
+	/**
+	 * Define table
+	 */
+	protected function _construct()
+	{
+		$this->_init('@TABLE_NAME', '@PRIMARY_KEY');
+    }
+}
