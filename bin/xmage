@@ -10,9 +10,9 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
 
 use Symfony\Component\Console\Application;
 
-use WebWeave\Module\NewModuleCommand;
-use WebWeave\Module\NewEventCommand;
-use WebWeave\Module\NewModelsCommand;
+use WebWeave\Commands\NewModuleCommand;
+use WebWeave\Commands\NewEventCommand;
+use WebWeave\Commands\NewModelsCommand;
 
 $application = new Application();
 

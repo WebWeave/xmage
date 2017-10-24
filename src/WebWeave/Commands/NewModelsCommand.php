@@ -1,6 +1,6 @@
 <?php
 
-namespace WebWeave\Module;
+namespace WebWeave\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -11,9 +11,7 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use WebWeave\Utils\Utils;
-use WebWeave\Templates\ModelTemplate;
-use WebWeave\Templates\ResourceModelTemplate;
-use WebWeave\Templates\CollectionTemplate;
+use WebWeave\Templates\Template;
 
 /**
  * Class NewModelsCommand
@@ -77,8 +75,9 @@ class NewModelsCommand extends Command
     {
         $vendor_package = explode("_", $this->targetModule);
 
-        $modelTemplate = new ModelTemplate();
+        $modelTemplate = new Template();
 
+        $modelTemplate->setTemplate('Model.php.html');
         $modelTemplate->setVars($vendor_package[0], 'VENDOR');
         $modelTemplate->setVars($vendor_package[1], 'PACKAGE');
         $modelTemplate->setVars($this->targetName, 'MODEL_NAME');
@@ -92,8 +91,9 @@ class NewModelsCommand extends Command
     {
         $vendor_package = explode("_", $this->targetModule);
 
-        $resourceModelTemplate = new ResourceModelTemplate();
+        $resourceModelTemplate = new Template();
 
+        $resourceModelTemplate->setTemplate('ResourceModel.php.html');
         $resourceModelTemplate->setVars($vendor_package[0], 'VENDOR');
         $resourceModelTemplate->setVars($vendor_package[1], 'PACKAGE');
         $resourceModelTemplate->setVars($this->targetName, 'MODEL_NAME');
@@ -108,8 +108,9 @@ class NewModelsCommand extends Command
     {
         $vendor_package = explode("_", $this->targetModule);
 
-        $collectionTemplate = new CollectionTemplate();
+        $collectionTemplate = new Template();
 
+        $collectionTemplate->setTemplate('Collection.php.html');
         $collectionTemplate->setVars($vendor_package[0], 'VENDOR');
         $collectionTemplate->setVars($vendor_package[1], 'PACKAGE');
         $collectionTemplate->setVars($this->targetName, 'MODEL_NAME');
