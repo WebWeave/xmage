@@ -1,6 +1,6 @@
 <?php
 
-namespace WebWeave\Module;
+namespace WebWeave\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -9,8 +9,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
-use WebWeave\Templates\RegistrationTemplate;
-use WebWeave\Templates\ModuleTemplate;
+use WebWeave\Templates\Template;
 
 /**
  * Class NewModuleCommand
@@ -53,12 +52,14 @@ class NewModuleCommand extends Command
 
     protected function createModuleFiles()
     {
-        $registrationTemplate = new RegistrationTemplate();
-        $moduleTemplate = new ModuleTemplate();
+        $registrationTemplate = new Template();
+        $moduleTemplate = new Template();
 
+        $registrationTemplate->setTemplate('registration.php.html');
         $registrationTemplate->setVars($this->vendor, 'VENDOR');
         $registrationTemplate->setVars($this->package, 'PACKAGE');
 
+        $moduleTemplate->setTemplate('module.xml.html');
         $moduleTemplate->setVars($this->vendor, 'VENDOR');
         $moduleTemplate->setVars($this->package, 'PACKAGE');
 

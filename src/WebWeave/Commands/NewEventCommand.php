@@ -1,6 +1,6 @@
 <?php
 
-namespace WebWeave\Module;
+namespace WebWeave\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use WebWeave\Templates\EventsTemplate;
+use WebWeave\Templates\Template;
 use WebWeave\Utils\Utils;
 
 class NewEventCommand extends Command
@@ -61,7 +61,8 @@ class NewEventCommand extends Command
 
         if (!$this->checkIfFirst()) {
 
-            $EventsTemplate = new EventsTemplate();
+            $EventsTemplate = new Template();
+            $EventsTemplate->setTemplate('events.xml.html');
             $EventsTemplate->setVars($this->event, 'EVENT');
             $EventsTemplate->setVars($this->observerName, 'OBSERVER_NAME');
             $EventsTemplate->setVars($this->observerInstance, 'OBSERVER');
