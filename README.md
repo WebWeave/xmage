@@ -23,9 +23,9 @@ $ xmage
 ```
 Create a new module
 ```
-$ xmage new:module vendor package
+$ xmage module:new vendor package
 ```
 Create model, resource model and collection
 ```
-$ xmage new:model:all Table Primary key Model name
+$ xmage models:new:all Table Primary key Model name
 ```
