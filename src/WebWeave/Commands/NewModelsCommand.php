@@ -35,7 +35,7 @@ class NewModelsCommand extends Command
 
     protected function configure()
     {
-        $this->setName("new:model:all")
+        $this->setName("models:new:all")
             ->setDescription("Creates models and collection for table")
             ->addArgument("Table", InputArgument::REQUIRED, "Table name")
             ->addArgument("Primary Key", InputArgument::REQUIRED, "Primary Key")

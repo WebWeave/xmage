@@ -30,7 +30,7 @@ class NewEventCommand extends Command
 
     protected function configure()
     {
-        $this->setName("new:event")
+        $this->setName("events:new")
             ->setDescription("Creates a new event")
             ->addArgument("event", InputArgument::REQUIRED, "Event name")
             ->addArgument("observer_name", InputArgument::REQUIRED, "Observer name")
