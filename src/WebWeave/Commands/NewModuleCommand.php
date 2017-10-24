@@ -28,7 +28,7 @@ class NewModuleCommand extends Command
 
     protected function configure()
     {
-        $this->setName("new:module")
+        $this->setName("module:new")
             ->setDescription("Creates a new module")
             ->addArgument("Vendor", InputArgument::REQUIRED, "Vendor name")
             ->addArgument("Package", InputArgument::REQUIRED, "Package name");
