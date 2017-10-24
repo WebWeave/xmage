@@ -13,12 +13,14 @@ use Symfony\Component\Console\Application;
 use WebWeave\Commands\NewModuleCommand;
 use WebWeave\Commands\NewEventCommand;
 use WebWeave\Commands\NewModelsCommand;
+use WebWeave\Commands\NewGridCommand;
 
 $application = new Application();
 
 $application->add(new NewModuleCommand());
 $application->add(new NewEventCommand());
 $application->add(new NewModelsCommand());
+$application->add(new NewGridCommand());
 
 $application->run();
 
